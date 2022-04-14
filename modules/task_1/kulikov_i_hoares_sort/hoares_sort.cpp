@@ -31,6 +31,6 @@ void hoares_sort_(int* str1, int* str2) {
     if (sub_str1 < str2) hoares_sort_(sub_str1, str2);
 }
 
-void* hoares_sort(int* str, int sz) {
+void hoares_sort(int* str, int sz) {
     hoares_sort_(str, str + sz / 2);
 }
