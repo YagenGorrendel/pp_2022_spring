@@ -14,23 +14,34 @@ int* get_random_str(int sz) {
     return out_str;
 }
 
-void hoares_sort_(int* str1, int* str2) {
-    // if (str2 - str1 <= 1) return;
-    int z = *(str1 + (str2 - str1) / 2);
-    int* sub_str1 = str1, *sub_str2 = str2 - 1;
-    while (sub_str1 <= sub_str2) {
-        while (*sub_str1 < z) sub_str1++;
-        while (*sub_str2 > z) sub_str2--;
-        if (sub_str1 <= sub_str2) {
-            std::swap(*sub_str1, *sub_str2);
-            sub_str1++;
-            sub_str2--;
+void quicksort(int *mas, int first, int last) {
+    int mid, count;
+    int f = first, l = last;
+    mid = mas[(f + l) / 2];
+    do {
+        while (mas[f] < mid) f++;
+        while (mas[l] > mid) l--;
+        if (f <= l) {
+            count = mas[f];
+            mas[f] = mas[l];
+            mas[l] = count;
+            f++;
+            l--;
         }
-    }
-    if (str1 < sub_str2) hoares_sort_(str1, sub_str2 + 1);
-    if (sub_str1 < str2) hoares_sort_(sub_str1, str2);
+    } while (f < l);
+    if (first < l) quicksort(mas, first, l);
+    if (f < last) quicksort(mas, f, last);
 }
 
-void hoares_sort(int* str, int sz) {
-    hoares_sort_(str, str + sz / 2);
+bool check(int* mas, int size) {
+    bool res = true;
+
+    for (int i = 0; i < size - 1; i++) {
+        if (mas[i] > mas[i + 1]) {
+            res = false;
+            break;
+        }
+    }
+
+    return res;
 }

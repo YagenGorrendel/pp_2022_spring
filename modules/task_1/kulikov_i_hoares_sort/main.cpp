@@ -10,75 +10,65 @@ int sz = 1000;
 TEST(MPILexicalOrdering, IdenticalTest) {
     int* string1 = get_random_str(sz);
 
-    hoares_sort(string1, sz);
+    quicksort(string1, 0, sz);
 
-    for (int i = 0; i < sz; i++) {
-        int result = 0;
-        if (string1[i] < string1[i + 1]) {
-            result++;
-        }
-        EXPECT_EQ(result, 1);
-    }
-    delete[] string1;
-}
+    bool res;
+    res = check(string1, sz);
 
-TEST(MPILexicalOrdering1, IdenticalTest) {
-    int* string1 = get_random_str(sz);
+    EXPECT_EQ(res, true);
 
-    hoares_sort(string1, sz);
-
-    for (int i = 0; i < sz; i++) {
-        int result = 0;
-        if (string1[i] < string1[i + 1]) {
-            result++;
-        }
-        EXPECT_EQ(result, 1);
-    }
     delete[] string1;
 }
 
 TEST(MPILexicalOrdering2, IdenticalTest) {
     int* string1 = get_random_str(sz);
 
-    hoares_sort(string1, sz);
+    quicksort(string1, 0, sz);
 
-    for (int i = 0; i < sz; i++) {
-        int result = 0;
-        if (string1[i] < string1[i + 1]) {
-            result++;
-        }
-        EXPECT_EQ(result, 1);
-    }
+    bool res;
+    res = check(string1, sz);
+
+    EXPECT_EQ(res, true);
+
     delete[] string1;
 }
 
 TEST(MPILexicalOrdering3, IdenticalTest) {
     int* string1 = get_random_str(sz);
 
-    hoares_sort(string1, sz);
+    quicksort(string1, 0, sz);
 
-    for (int i = 0; i < sz; i++) {
-        int result = 0;
-        if (string1[i] < string1[i + 1]) {
-            result++;
-        }
-        EXPECT_EQ(result, 1);
-    }
+    bool res;
+    res = check(string1, sz);
+
+    EXPECT_EQ(res, true);
+
     delete[] string1;
 }
 
 TEST(MPILexicalOrdering4, IdenticalTest) {
     int* string1 = get_random_str(sz);
 
-    hoares_sort(string1, sz);
+    quicksort(string1, 0, sz);
 
-    for (int i = 0; i < sz; i++) {
-        int result = 0;
-        if (string1[i] < string1[i + 1]) {
-            result++;
-        }
-        EXPECT_EQ(result, 1);
-    }
+    bool res;
+    res = check(string1, sz);
+
+    EXPECT_EQ(res, true);
+
+    delete[] string1;
+}
+
+TEST(MPILexicalOrdering5, IdenticalTest) {
+    int* string1 = get_random_str(sz);
+
+    quicksort(string1, 0, sz);
+
+    bool res;
+    res = check(string1, sz);
+
+    EXPECT_EQ(res, true);
+
     delete[] string1;
 }
 
