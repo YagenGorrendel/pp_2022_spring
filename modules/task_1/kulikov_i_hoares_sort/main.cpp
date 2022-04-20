@@ -5,73 +5,70 @@
 #include <gtest-mpi-listener.hpp>
 #include "../../../modules/task_1/kulikov_i_hoares_sort/hoares_sort.h"
 
-int sz = 1000;
+TEST(MPI_1root, Test_10) {
+    int* string1 = get_random_str(10);
 
-TEST(MPILexicalOrdering, IdenticalTest) {
-    int* string1 = get_random_str(sz);
-
-    quicksort(string1, 0, sz);
+    quicksort(string1, 0, 10);
 
     bool res;
-    res = check(string1, sz);
+    res = check(string1, 10);
 
     EXPECT_EQ(res, true);
 
     delete[] string1;
 }
 
-TEST(MPILexicalOrdering2, IdenticalTest) {
-    int* string1 = get_random_str(sz);
+TEST(MPI_1root, Test_25) {
+    int* string1 = get_random_str(25);
 
-    quicksort(string1, 0, sz);
+    quicksort(string1, 0, 25);
 
     bool res;
-    res = check(string1, sz);
+    res = check(string1, 25);
 
     EXPECT_EQ(res, true);
 
     delete[] string1;
 }
 
-TEST(MPILexicalOrdering3, IdenticalTest) {
-    int* string1 = get_random_str(sz);
+TEST(MPI_1root, Test_50) {
+    int* string1 = get_random_str(50);
 
-    quicksort(string1, 0, sz);
+    quicksort(string1, 0, 50);
 
     bool res;
-    res = check(string1, sz);
+    res = check(string1, 50);
 
     EXPECT_EQ(res, true);
 
     delete[] string1;
 }
 
-TEST(MPILexicalOrdering4, IdenticalTest) {
-    int* string1 = get_random_str(sz);
+TEST(MPI_1root, Test_100) {
+    int* string1 = get_random_str(100);
 
-    quicksort(string1, 0, sz);
+    quicksort(string1, 0, 100);
 
     bool res;
-    res = check(string1, sz);
+    res = check(string1, 100);
 
     EXPECT_EQ(res, true);
 
     delete[] string1;
 }
 
-TEST(MPILexicalOrdering5, IdenticalTest) {
-    int* string1 = get_random_str(sz);
+TEST(MPI_1root, Test_110) {
+    int* string1 = get_random_str(110);
 
-    quicksort(string1, 0, sz);
+    quicksort(string1, 0, 110);
 
     bool res;
-    res = check(string1, sz);
+    res = check(string1, 110);
 
     EXPECT_EQ(res, true);
 
     delete[] string1;
 }
-
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
